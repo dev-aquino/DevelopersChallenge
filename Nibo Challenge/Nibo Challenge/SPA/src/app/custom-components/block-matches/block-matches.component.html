@@ -1,0 +1,5 @@
+<ul *ngFor="let match of listQuantityOfMatch; let i = index" class="list-group my-margin">
+  <button *ngFor="let item of matches[i].teams" type="button" class="list-group-item list-group-item-action"
+    [ngClass]="isClassified(item.id) == true ? 'active' : ''" (click)="increaseVictory(item.id, i)"
+    [disabled]="isMatchFinished(i)">{{item.name}}</button>
+</ul>

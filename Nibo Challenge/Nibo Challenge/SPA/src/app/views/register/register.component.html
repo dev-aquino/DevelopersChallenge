@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        TIMES
+      </div>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let item of teamList; let i = index; let l = last;" class="list-group-item"
+          [ngClass]="l == true ? 'active' : ''">{{i + 1}} | {{item.name}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-4 align-self-center">
+    <div class="card" style="height: 100vh;">
+      <div class="card-body">
+        <div class="form-group" style="margin-top: 50%;">
+          <label>Nome do time :</label>
+          <input class="form-control" type="text" placeholder="Insira o nome do time" [(ngModel)]="team.name"
+            [disabled]="teamLimitReached">
+        </div>
+        <div class="d-flex justify-content-around">
+          <button [ngClass]="teamLimitReached == false ? 'btn btn-success' : 'btn btn-danger'"
+            [disabled]="teamLimitReached" (click)="submit()">Registrar time</button>
+          <button [ngClass]="teamLimitReached == true ? 'btn btn-success' : 'btn btn-primary'"
+            routerLink="/home">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

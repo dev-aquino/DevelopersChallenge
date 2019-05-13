@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="jumbotron">
+      <h1 class="display-4">Gerenciador de torneio</h1>
+      <p class="lead">Leia abaixo como funciona o gerenciador de torneio.</p>
+      <hr class="my-4">
+      <p>Deve ser cadastrado 4 ou 8 times.</p>
+      <p>O torneio só poderá ser iniciado quando o critério acima for atendido.</p>
+      <button type="button" class="btn-lg btn-block"
+        [ngClass]="teamLimitReached == false ? 'btn btn-primary' : 'btn btn-danger'" routerLink="/register"
+        [disabled]="teamLimitReached">Cadastrar times</button>
+      <button type="button" class="btn-lg btn-block"
+        [ngClass]="canStartTournament == true ? 'btn btn-success' : 'btn btn-danger'" routerLink="/tournament"
+        [disabled]="!canStartTournament">Iniciar torneio</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row justify-content-between">
+  <div class="col-md-4 align-self-start">
+    <app-block-matches [listQuantityOfMatch]="quantityOfMatch"></app-block-matches>
+  </div>
+  <div class="offset-md-4 col-md-4 align-self-center">
+    <h1>Selecione o vencedor de cada confronto ao lado.</h1>
+  </div>
+  <div class="w-100"></div>
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-body">
+        <div class="d-flex justify-content-around">
+          <button class="btn btn-primary" routerLink="/home">Voltar</button>
+          <button [ngClass]="canToGoNextStep == true ? 'btn btn-success' : 'btn btn-danger'"
+            [disabled]="!canToGoNextStep" (click)="toNextStep()">Avançar fase</button>
+        </div>
+        <div *ngIf="hasWinner">
+          <h1>VENCEDOR</h1>
+          <h3>{{ nameWinner }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
