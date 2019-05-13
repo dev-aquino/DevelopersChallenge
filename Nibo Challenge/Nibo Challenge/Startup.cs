@@ -53,7 +53,6 @@ namespace Nibo_Challenge
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 
